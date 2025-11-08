@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>User Registration Form</title>
+  <link rel="stylesheet" href="Registration.css">
+</head>
+<body>
+
+  <h2>User Registration Form</h2>
+  <div class="form-container">
+      <table>
+        <tr>
+          <td><label>Fullname</label></td>
+          <td><input type="text" name="fullname" required></td>
+        </tr>
+        <tr>
+          <td><label>Email</label></td>
+          <td><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+          <td><label>Password</label></td>
+          <td><input type="password" name="password" required></td>
+        </tr> <br>
+        <tr>
+          <td><label>Role</label></td><br>
+          <td class="radio-group">
+            <label><input type="radio" name="role" value="admin"> Admin</label>
+            <label><input type="radio" name="role" value="user"> User</label>
+          </td>
+        </tr>
+      </table>
+      <p class="sign in">Already have an account? <span><a href="Login.html">sign in</a></span></p>
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+  </div>
+</body>
+</html>
