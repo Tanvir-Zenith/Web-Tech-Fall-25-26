@@ -1,0 +1,77 @@
+
+<html>
+<head>
+    <title>Global Tech Connect</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registration</h2>
+        <form id="regForm">
+            <label>Full Name</label>
+            <input type="text" id="name">
+            <p class="error" id="nameError">Name must be between 6 and 100 characters</p>
+
+            <label>Email</label>
+            <input type="email" id="email">
+            <p class="error"id="emailError">Please enter a valid professional email address</p>
+
+            <label>Company</label>
+            <input type="text" id="company">
+
+            <label>Attendance Type</label>
+            <input type="radio" name="attendance" value="Virtual">Virtual
+            <input type="radio" name="attendance" value="In-Person">In-Person
+            <p class="error" id="attError">Please select your attendance type.</p>
+            <button type="button" class="btn" onclick="register()">Register</button>
+        </form>
+        
+        <button class="analytics-btn" id="toggleBtn" onclick="toggleStats()">Show Event Analytics</button>
+    </div>
+
+    <script>
+        let registrations= [];  
+        function register() 
+        {
+            let name=document.getElementById("name").value.trim();
+            let email=document.getElementById("email").value.trim();
+            let attendance=document.querySelector("input[name='attendance']:checked");
+            let valid=true;
+
+            if(name.length< 6 || name.length >100) 
+            {
+                document.getElementById("nameError").style.display="block";
+                valid=false;
+            } 
+            else
+            {
+                document.getElementById("nameError").style.display="none";
+            }
+
+            if(!email.includes("@")||!email.includes(".")) 
+            {
+                document.getElementById("emailError").style.display="block";
+                valid=false;
+            } 
+            else 
+            {
+                document.getElementById("emailError").style.display="none";
+            }
+            if(!attendance) 
+            {
+                document.getElementById("attError").style.display="block";
+                valid=false;
+            } 
+            else 
+            {
+                document.getElementById("attError").style.display="none";
+            }
+            if (!valid) return;
+
+            alert("Registration Successful!");
+        }
+
+    </script>
+</body>
+</html>
